@@ -1,5 +1,5 @@
 defmodule App.Guardian do
-  use Guardian, otp_app: :myApi
+  use Guardian, otp_app: :App
 
   def subject_for_token(user, _claims) do
     sub = to_string(user.id)
@@ -12,7 +12,7 @@ defmodule App.Guardian do
 
   def resource_from_claims(claims) do
     id = claims["sub"]
-    resource = MyApi.Accounts.get_user!(id)
+    resource = App.Accounts.get_user!(id)
     {:ok,  resource}
   end
 
