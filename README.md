@@ -1,4 +1,4 @@
-# App
+# Elixir - Phoenix Gaurdian (JWT) Boilerplate
 
 To start your Phoenix server:
 
