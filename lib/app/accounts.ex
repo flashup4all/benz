@@ -113,6 +113,9 @@ defmodule App.Accounts do
   def token_sign_in(email, password) do
     case email_password_auth(email, password) do
       {:ok, user} ->
+        IO.puts "++++++++"
+        IO.inspect user
+        IO.puts "++++++++"
         Guardian.encode_and_sign(user)
       _ ->
         {:error, :unauthorized}

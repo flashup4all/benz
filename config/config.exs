@@ -32,4 +32,14 @@ import_config "#{Mix.env()}.exs"
 # Guardian config
 config :app, App.Guardian,
    issuer: "app",
+   ttl: { 30, :days },
+	allowed_drift: 2000,
    secret_key: "E2axSxtHryZgzlOjMSnGMegG5KtMMGOgwuxQLGVgYWMtUNMzGjhkZMeHdUL993F8" #"Secret key. Use `mix guardian.gen.secret` to generate one"
+# config :guardian, App.Guardian,
+#   allowed_algos: ["HS512"], # optional
+#   verify_module: Guardian.JWT,  # optional
+#   issuer: "app",
+#   ttl: { 30, :days },
+#   verify_issuer: true, # optional
+#   secret_key: E2axSxtHryZgzlOjMSnGMegG5KtMMGOgwuxQLGVgYWMtUNMzGjhkZMeHdUL993F8,
+#   serializer: App.GuardianSerializer

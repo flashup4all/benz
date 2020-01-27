@@ -1,5 +1,5 @@
 defmodule App.Guardian do
-  use Guardian, otp_app: :App
+  use Guardian, otp_app: :app
 
   def subject_for_token(user, _claims) do
     sub = to_string(user.id)
