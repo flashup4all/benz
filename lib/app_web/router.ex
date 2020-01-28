@@ -9,6 +9,6 @@ defmodule AppWeb.Router do
     pipe_through :api
 
     resources "/users", UserController, only: [:create, :show]
-    post "/signin", UserController, :sign_in
+    post "/signin", AuthController, :sign_in
   end
 end
