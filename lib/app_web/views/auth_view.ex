@@ -5,4 +5,8 @@ defmodule AppWeb.AuthView do
   def render("jwt.json", %{jwt: jwt}) do
     %{jwt: jwt}
   end
+
+  def render("logout.json", %{status: status}) do
+    %{status: status}
+  end
 end
