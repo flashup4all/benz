@@ -68,5 +68,10 @@ defmodule App.AccountsTest do
       user = user_fixture()
       assert %Ecto.Changeset{} = Accounts.change_user(user)
     end
+
+    # test "get_by_email/1" do
+    #   user = user_fixture()
+    #   assert Accounts.get_by!(email: user.email) == user
+    # end
   end
 end

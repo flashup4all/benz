@@ -2,7 +2,6 @@ defmodule AppWeb.AuthController do
   use AppWeb, :controller
 
   alias App.Accounts
-  alias App.Accounts.User
   alias App.Guardian
 
   action_fallback AppWeb.FallbackController
@@ -27,9 +26,9 @@ defmodule AppWeb.AuthController do
   logout a user
 
   """
-  def logout(conn, params) do
+  def logout(conn, _) do
     jwt = Guardian.Plug.current_token(conn)
-    check = App.Guardian.revoke(jwt)
-    render("logout.json",status: "token destroyed")
+    App.Guardian.revoke(jwt)
+    render("logout.json", status: "token destroyed")
   end
 end
