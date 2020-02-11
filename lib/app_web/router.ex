@@ -12,6 +12,11 @@ defmodule AppWeb.Router do
     pipe_through :api
 
     resources "/users", UserController, only: [:create, :show]
+    get "/plans/user/:id", PlanController, :user_plans
+    resources "/plans", PlanController
+    get "/user-plans/user/:user_id", UserPlanController, :user_subscribed_plans
+    resources "/user-plans", UserPlanController
+    resources "/plan-transactions", PlanTransactionController
     post "/signin", AuthController, :sign_in
   end
 

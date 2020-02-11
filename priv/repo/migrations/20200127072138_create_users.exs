@@ -8,6 +8,11 @@ defmodule App.Repo.Migrations.CreateUsers do
       add :password_hash, :string
       add :is_admin, :boolean, default: false, null: false
       add :provider, :string
+      add :email_verified, :string, default: false
+      add :role, :integer, default: 1
+      add :dob, :utc_datetime, null: true
+      add :avata, :string, null: true
+      add :bvn, :string, null: true
 
       timestamps()
     end
